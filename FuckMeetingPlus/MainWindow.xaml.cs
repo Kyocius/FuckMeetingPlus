@@ -23,6 +23,15 @@ namespace FuckMeetingPlus
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += (sender, args) =>
+            {
+                WPFUI.Appearance.Watcher.Watch(
+                    this, // Window class
+                    WPFUI.Appearance.BackgroundType.Mica, // Background type
+                    true // Whether to change accents automatically
+                );
+            };
         }
     }
 }

@@ -7,19 +7,46 @@
         mc:Ignorable="d"
         xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
         Style="{StaticResource UiWindow}"
-        Title="MainWindow" Height="450" Width="300">
-    
+        Title="MainWindow" Height="530" Width="300"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
         <StackPanel>
-            <wpfui:TitleBar ForceShutdown="True" />
-            <StackPanel Margin="16,20,16,0">
-                <TextBox Text="Path"></TextBox>
-                <DatePicker></DatePicker>
-                <TextBox Text="Path"></TextBox>
-                <TextBox Text="Path"></TextBox>
-                <TextBox Text="Path"></TextBox>
-                <wpfui:NumberBox></wpfui:NumberBox>
-                <Button Content="Yes, Click Me!"></Button>
+            <wpfui:TitleBar ForceShutdown="True" Title="FuckMeeting+" />
+
+            <StackPanel Margin="16,0,16,0">
+                <StackPanel Margin="8">
+                    <TextBlock Text="腾讯会议路径" Margin="0,0,0,8" />
+                    <TextBox Text="Path"></TextBox>
+                </StackPanel>
+                <StackPanel Margin="8">
+                    <TextBlock Text="等待腾讯会议启动时间" Margin="0,0,0,8" />
+                    <wpfui:NumberBox Text="5" />
+                </StackPanel>
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="横坐标" Margin="0,0,0,8" />
+                        <wpfui:NumberBox Text="1920" Margin="0,0,8,0" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="纵坐标" Margin="0,0,0,8" />
+                        <wpfui:NumberBox Text="1080" />
+                    </StackPanel>
+                </Grid>
+                <StackPanel Margin="8">
+                    <TextBlock Text="会议号" Margin="0,0,0,8" />
+                    <wpfui:NumberBox Text="114514" />
+                </StackPanel>
+                <StackPanel Margin="8">
+                    <TextBlock Text="会议开始时间 (日/时/分)" Margin="0,0,0,8" />
+                    <TextBox Text="05/14/33" />
+                </StackPanel>
+                <wpfui:Button Content="开始摸鱼!" Appearance="Primary" Margin="0,8,0,8" />
+                <wpfui:Button Content="取消" Appearance="Secondary" />
             </StackPanel>
         </StackPanel>
     </Grid>

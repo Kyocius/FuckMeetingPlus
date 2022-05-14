@@ -1,0 +1,26 @@
+﻿<Window x:Class="FuckMeetingPlus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuckMeetingPlus"
+        mc:Ignorable="d"
+        xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Style="{StaticResource UiWindow}"
+        Title="MainWindow" Height="450" Width="300">
+    
+    <Grid>
+        <StackPanel>
+            <wpfui:TitleBar ForceShutdown="True" />
+            <StackPanel Margin="16,20,16,0">
+                <TextBox Text="Path"></TextBox>
+                <DatePicker></DatePicker>
+                <TextBox Text="Path"></TextBox>
+                <TextBox Text="Path"></TextBox>
+                <TextBox Text="Path"></TextBox>
+                <wpfui:NumberBox></wpfui:NumberBox>
+                <Button Content="Yes, Click Me!"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

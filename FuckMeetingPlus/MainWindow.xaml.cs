@@ -24,7 +24,7 @@ namespace FuckMeetingPlus
         {
             InitializeComponent();
 
-            Loaded += (sender, args) =>
+            Loaded += (_, _) =>
             {
                 WPFUI.Appearance.Watcher.Watch(
                     this, // Window class

@@ -10,6 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="H.InputSimulator" Version="1.2.6" />
 		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
 		<PackageReference Include="WPF-UI" Version="1.2.7" />
 	</ItemGroup>

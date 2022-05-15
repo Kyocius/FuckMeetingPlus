@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Windows;
 using System.Windows.Input;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
-
 
 namespace FuckMeetingPlus;
 
@@ -83,28 +84,12 @@ public class MainViewModel : ObservableObject
         X2 = UserSettings.Default.X2;
         Y2 = UserSettings.Default.Y2;
         SaveSettingsCommand = new RelayCommand(SaveUserSettings);
+        StartCommand = new RelayCommand(StartFishTouching);
     }
 
     public ICommand SaveSettingsCommand { get; }
     private void SaveUserSettings()
     {
-        //if (string.IsNullOrEmpty(Path))
-        //    UserSettings.Default.Path = "Empty";
-        //if (string.IsNullOrEmpty(Time))
-        //    UserSettings.Default.Time = "0";
-        //if (string.IsNullOrEmpty(MeetingId))
-        //    UserSettings.Default.MeetingId = "0";
-        //if (string.IsNullOrEmpty(Waiting))
-        //    UserSettings.Default.Waiting = "0";
-        //if (string.IsNullOrEmpty(X1))
-        //    UserSettings.Default.X1 = "0";
-        //if (string.IsNullOrEmpty(Y1))
-        //    UserSettings.Default.Y1 = "0";
-        //if (string.IsNullOrEmpty(X2))
-        //    UserSettings.Default.X2 = "0";
-        //if (string.IsNullOrEmpty(Y2))
-        //    UserSettings.Default.Y2 = "0";
-
         UserSettings.Default.Path = Path;
         UserSettings.Default.MeetingId = MeetingId;
         UserSettings.Default.Time = Time;
@@ -115,5 +100,11 @@ public class MainViewModel : ObservableObject
         UserSettings.Default.Y2 = Y2;
 
         UserSettings.Default.Save();
+    }
+
+    public ICommand StartCommand { get; }
+    private void StartFishTouching()
+    {
+        Process.Start(Path);
     }
 }

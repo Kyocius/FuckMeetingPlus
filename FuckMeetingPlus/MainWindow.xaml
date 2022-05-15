@@ -69,7 +69,7 @@
                 </StackPanel>
 
                 <wpfui:Button Content="保存配置" Appearance="Secondary" Margin="0,8,0,8" Command="{Binding SaveSettingsCommand}"/>
-                <wpfui:Button Content="开始摸鱼!" Appearance="Primary" />
+                <wpfui:Button Content="开始摸鱼!" Appearance="Primary" Command="{Binding StartCommand}"/>
                 <wpfui:Hyperlink Content="关于" Margin="0,8,0,0" />
             </StackPanel>
         </StackPanel>

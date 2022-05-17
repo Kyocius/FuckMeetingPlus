@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using System.Timers;
-using System.Windows;
 using System.Windows.Input;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -15,6 +13,7 @@ public class MainViewModel : ObservableObject
 {
     #region Properties
 
+    //腾讯会议的安装路径
     private string _path;
 
     public string Path
@@ -23,6 +22,7 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _path, value);
     }
 
+    //等待腾讯会议启动时间，单位秒
     private string _waiting;
 
     public string Waiting
@@ -92,9 +92,13 @@ public class MainViewModel : ObservableObject
         X2 = UserSettings.Default.X2;
         Y2 = UserSettings.Default.Y2;
 
+        InitializeTimer();
+
         SaveSettingsCommand = new RelayCommand(SaveUserSettings);
         StartCommand = new RelayCommand(StartFishTouching);
     }
+
+    #region Commands
 
     public ICommand SaveSettingsCommand { get; }
 
@@ -116,39 +120,60 @@ public class MainViewModel : ObservableObject
 
     private void StartFishTouching()
     {
-        while (true)
-        {
-            CurrentTime = DateTime.Now.ToString("MM/dd/HH/mm");
-            Thread.Sleep(10000);
+        myTimer.Start();
+    }
 
-            if (CurrentTime == Time)
+    #endregion
+
+    private string CurrentTime;
+    private Timer myTimer;
+
+    /// <summary>
+    /// 主逻辑函数，参数无用，仅用来匹配委托
+    /// </summary>
+    private void MainLogic(object sender, EventArgs e)
+    {
+        CurrentTime = DateTime.Now.ToString("MM/dd/HH/mm");
+
+        if (CurrentTime == Time)
+        {
+            try
             {
-                MainLogic();
-                break;
+                Process.Start(Path);
             }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+
+            Thread.Sleep(Convert.ToInt32(Waiting) * 1000);
+
+            var intX1 = Convert.ToInt32(X1);
+            var intY1 = Convert.ToInt32(Y1);
+            NativeMethod.LeftMouseClick(intX1, intY1);
+            Thread.Sleep(500);
+
+            NativeMethod.KeyInput(MeetingId);
+            Thread.Sleep(500);
+
+            var intX2 = Convert.ToInt32(X2);
+            var intY2 = Convert.ToInt32(Y2);
+            NativeMethod.LeftMouseClick(intX2, intY2);
+
+            myTimer.Enabled = false;
+            myTimer.Stop();
         }
     }
 
-    private string CurrentTime;
-
     /// <summary>
-    /// 主逻辑函数
+    /// 初始化Timer
     /// </summary>
-    private void MainLogic()
+    private void InitializeTimer()
     {
-        Process.Start(Path);
-        Thread.Sleep(Convert.ToInt32(Waiting) * 1000);
-
-        var intX1 = Convert.ToInt32(X1);
-        var intY1 = Convert.ToInt32(Y1);
-        NativeMethod.LeftMouseClick(intX1, intY1);
-        Thread.Sleep(500);
-
-        NativeMethod.KeyInput(MeetingId);
-        Thread.Sleep(500);
-
-        var intX2 = Convert.ToInt32(X2);
-        var intY2 = Convert.ToInt32(Y2);
-        NativeMethod.LeftMouseClick(intX2, intY2);
+        myTimer = new Timer();
+        myTimer.Interval = 30000; //注意间隔时间为30秒
+        myTimer.Enabled = false;
+        myTimer.Elapsed += MainLogic;
     }
 }

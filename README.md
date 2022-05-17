@@ -36,11 +36,11 @@ FuckMeeting+（下文简称为FM+）是 [FuckTencentMeeting](github.com/Yoroion/
 
 ## ❤️ 鸣谢
 
-- [Microsoft.Toolkit.MVVM]([CommunityToolkit/WindowsCommunityToolkit: The Windows Community Toolkit is a collection of helpers, extensions, and custom controls. It simplifies and demonstrates common developer tasks building UWP and .NET apps for Windows 10. The toolkit is part of the .NET Foundation. (github.com)](https://github.com/CommunityToolkit/WindowsCommunityToolkit))
+- [Microsoft.Toolkit.MVVM](https://github.com/CommunityToolkit/WindowsCommunityToolkit)
 
-- [H.InputSimulater]([HavenDV/H.InputSimulator: Allows you to simulate global mouse and keyboard events. (github.com)](https://github.com/HavenDV/H.InputSimulator))
+- [H.InputSimulater](https://github.com/HavenDV/H.InputSimulator)
 
-- [WPFUI]([lepoco/wpfui: A simple way to make your application written in WPF keep up with modern design trends. Library changes the base elements like Page, ToggleButton or List, and also includes additional controls like Navigation, NumberBox, Dialog or Snackbar. (github.com)](https://github.com/lepoco/wpfui))
+- [WPFUI](https://github.com/lepoco/wpfui)
 
 - ReSharper
 

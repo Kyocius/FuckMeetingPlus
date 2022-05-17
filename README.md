@@ -1,6 +1,6 @@
 # FuckMeeting+
 
-FuckMeeting+（下文简称为FM+）是 [FuckTencentMeeting](github.com/Yoroion/FuckTencentMeeting) 的重构升级版，遵循 Windows 11 风格的 Fluent Design，是基于 .NET 6.0 的 WPF 应用
+腾讯会议自动入会 **FuckMeeting+** 是 [FuckTencentMeeting](github.com/Yoroion/FuckTencentMeeting) 的重构升级版，遵循 Windows 11 风格的 Fluent Design，是基于 .NET 6.0 的 WPF 应用，下文简称为 **FM+**
 
 ## 📷 截图展示
 

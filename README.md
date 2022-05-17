@@ -4,9 +4,9 @@
 
 ## 📷 截图展示
 
-![浅色模式](./screenshots/Light.png)
+<img src="./screenshots/Light.png" alt="浅色模式" style="zoom:80%;" />
 
-![浅色模式](./screenshots/Dark.png)
+<img src="./screenshots/Dark.png" alt="浅色模式" style="zoom:80%;" />
 
 ## ✨ 特性
 

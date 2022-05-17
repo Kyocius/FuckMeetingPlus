@@ -1,14 +1,20 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
+using System.Timers;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using FuckMeetingPlus.Utils;
+using Timer = System.Timers.Timer;
 
 namespace FuckMeetingPlus;
 
 public class MainViewModel : ObservableObject
 {
+    #region Properties
+
     private string _path;
 
     public string Path
@@ -73,6 +79,8 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _y2, value);
     }
 
+    #endregion
+
     public MainViewModel()
     {
         Path = UserSettings.Default.Path;
@@ -83,11 +91,13 @@ public class MainViewModel : ObservableObject
         Y1 = UserSettings.Default.Y1;
         X2 = UserSettings.Default.X2;
         Y2 = UserSettings.Default.Y2;
+
         SaveSettingsCommand = new RelayCommand(SaveUserSettings);
         StartCommand = new RelayCommand(StartFishTouching);
     }
 
     public ICommand SaveSettingsCommand { get; }
+
     private void SaveUserSettings()
     {
         UserSettings.Default.Path = Path;
@@ -103,8 +113,42 @@ public class MainViewModel : ObservableObject
     }
 
     public ICommand StartCommand { get; }
+
     private void StartFishTouching()
     {
+        while (true)
+        {
+            CurrentTime = DateTime.Now.ToString("MM/dd/HH/mm");
+            Thread.Sleep(10000);
+
+            if (CurrentTime == Time)
+            {
+                MainLogic();
+                break;
+            }
+        }
+    }
+
+    private string CurrentTime;
+
+    /// <summary>
+    /// 主逻辑函数
+    /// </summary>
+    private void MainLogic()
+    {
         Process.Start(Path);
+        Thread.Sleep(Convert.ToInt32(Waiting) * 1000);
+
+        var intX1 = Convert.ToInt32(X1);
+        var intY1 = Convert.ToInt32(Y1);
+        NativeMethod.LeftMouseClick(intX1, intY1);
+        Thread.Sleep(500);
+
+        NativeMethod.KeyInput(MeetingId);
+        Thread.Sleep(500);
+
+        var intX2 = Convert.ToInt32(X2);
+        var intY2 = Convert.ToInt32(Y2);
+        NativeMethod.LeftMouseClick(intX2, intY2);
     }
 }

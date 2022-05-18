@@ -22,7 +22,7 @@
 
 FM+ 的发布模式为**独立版**与**依赖框架版**同时发布，如果你的 PC 安装了 .NET 运行时，推荐使用体积更小的依赖框架版
 
-下载链接在 GitHub [Releases]([Releases · Yoroion/FuckMeetingPlus (github.com)](https://github.com/Yoroion/FuckMeetingPlus/releases)) 中
+下载链接在 GitHub [Releases](https://github.com/Yoroion/FuckMeetingPlus/releases)中
 
 ## ⚒️ 使用教程
 

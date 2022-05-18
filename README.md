@@ -1,6 +1,6 @@
 # FuckMeeting+
 
-腾讯会议自动入会 **FuckMeeting+** 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeeting) 的重构升级版，遵循 Windows11 风格的 Fluent Design，是基于 .NET 6.0 的 WPF 应用，下文简称为 **FM+**
+腾讯会议自动入会 **FuckMeeting+** 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeeting) 的重构升级版，遵循 Windows11 风格的 Fluent Design，是基于 .NET 6.0 的极简 WPF 应用，下文简称为 **FM+**
 
 ## 📷 截图展示
 
@@ -35,7 +35,7 @@ FM+ 的发布模式为**独立版**与**依赖框架版**同时发布，如果�
 
 ## ⚠️ 注意事项
 
-- 点击 ⌈开始摸鱼⌋ 按钮后，如果您想要取消任务，点击左上角的 `×` 关闭即可，FM+ 不会进驻系统后台
+- 点击 ⌈开始摸鱼⌋ 按钮后，如果您想要取消任务，点击右上角的 `×` 关闭即可，FM+ 不会进驻系统后台
 - 请务必保证填写的路径和预定时间符合格式
 - FM+ 检查当前时间是否到达预定时间的周期为 30 秒
 
@@ -43,10 +43,10 @@ FM+ 的发布模式为**独立版**与**依赖框架版**同时发布，如果�
 
 - [Microsoft.Toolkit.MVVM](https://github.com/CommunityToolkit/WindowsCommunityToolkit)
 - [H.InputSimulater](https://github.com/HavenDV/H.InputSimulator)
-- [WPFUI](https://github.com/lepoco/wpfui)
+- [WPF UI](https://github.com/lepoco/wpfui)
 - [ReSharper](https://www.jetbrains.com/resharper/)
 
-以及所有支持本项目的朋友，你们的 Star 将帮助 FM+ 这个小项目走得更远
+以及所有支持本项目的朋友，你们的 Star 将帮助 FM+ 这个超微小项目走得更远
 
 ## 🔨 开发环境要求
 

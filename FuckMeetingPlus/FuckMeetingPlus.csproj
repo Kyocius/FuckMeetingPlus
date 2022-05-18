@@ -8,7 +8,12 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<Description>腾讯会议自动入会</Description>
+		<ApplicationIcon>Assets\ShootingStar.ico</ApplicationIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="Assets\ShootingStar.ico" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="H.InputSimulator" Version="1.2.6" />

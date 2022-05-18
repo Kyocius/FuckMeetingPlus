@@ -68,9 +68,20 @@
                     <TextBox Text="{Binding Time, Mode=TwoWay}" />
                 </StackPanel>
 
-                <wpfui:Button Content="保存配置" Appearance="Secondary" Margin="0,8,0,8" Command="{Binding SaveSettingsCommand}"/>
-                <wpfui:Button Content="开始摸鱼!" Appearance="Primary" Command="{Binding StartCommand}"/>
-                <wpfui:Hyperlink Content="关于" Margin="0,8,0,0" />
+                <wpfui:Button Content="保存配置" Appearance="Secondary" Margin="0,8,0,8"
+                              Command="{Binding SaveSettingsCommand}" />
+                <wpfui:Button Content="开始摸鱼!" Appearance="Primary" Command="{Binding StartCommand}" />
+
+                <Grid Margin="0,8,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+
+                    <wpfui:Hyperlink Content="关于软件" Grid.Column="0" NavigateUri="https://github.com/Yoroion/FuckMeetingPlus"/>
+                    <TextBlock Text="{Binding IsMissionStarted}" Grid.Column="2" VerticalAlignment="Center" />
+                </Grid>
             </StackPanel>
         </StackPanel>
     </Grid>

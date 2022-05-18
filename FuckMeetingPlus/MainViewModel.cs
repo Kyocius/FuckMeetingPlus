@@ -13,6 +13,12 @@ public class MainViewModel : ObservableObject
 {
     #region Properties
 
+    public string IsMissionStarted
+    {
+        get => isMissionStarted;
+        set => SetProperty(ref isMissionStarted, value);
+    }
+
     //腾讯会议的安装路径
     private string _path;
 
@@ -79,24 +85,9 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _y2, value);
     }
 
+    private string isMissionStarted;
+
     #endregion
-
-    public MainViewModel()
-    {
-        Path = UserSettings.Default.Path;
-        Time = UserSettings.Default.Time;
-        MeetingId = UserSettings.Default.MeetingId;
-        Waiting = UserSettings.Default.Waiting;
-        X1 = UserSettings.Default.X1;
-        Y1 = UserSettings.Default.Y1;
-        X2 = UserSettings.Default.X2;
-        Y2 = UserSettings.Default.Y2;
-
-        InitializeTimer();
-
-        SaveSettingsCommand = new RelayCommand(SaveUserSettings);
-        StartCommand = new RelayCommand(StartFishTouching);
-    }
 
     #region Commands
 
@@ -121,9 +112,28 @@ public class MainViewModel : ObservableObject
     private void StartFishTouching()
     {
         myTimer.Start();
+        IsMissionStarted = "任务开始...";
     }
 
     #endregion
+
+    public MainViewModel()
+    {
+        Path = UserSettings.Default.Path;
+        Time = UserSettings.Default.Time;
+        MeetingId = UserSettings.Default.MeetingId;
+        Waiting = UserSettings.Default.Waiting;
+        X1 = UserSettings.Default.X1;
+        Y1 = UserSettings.Default.Y1;
+        X2 = UserSettings.Default.X2;
+        Y2 = UserSettings.Default.Y2;
+        IsMissionStarted = "准备就绪";
+
+        InitializeTimer();
+
+        SaveSettingsCommand = new RelayCommand(SaveUserSettings);
+        StartCommand = new RelayCommand(StartFishTouching);
+    }
 
     private string CurrentTime;
     private Timer myTimer;

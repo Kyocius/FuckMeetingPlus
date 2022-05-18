@@ -7,6 +7,7 @@
 		<PublishReadyToRun>true</PublishReadyToRun>
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
+		<Description>腾讯会议自动入会</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -16,22 +17,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Utils\" />
+	  	<Folder Include="Utils\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="UserSettings.Designer.cs">
-	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>UserSettings.settings</DependentUpon>
-	  </Compile>
+	  	<Compile Update="UserSettings.Designer.cs">
+	    		<DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    		<AutoGen>True</AutoGen>
+	    		<DependentUpon>UserSettings.settings</DependentUpon>
+	  	</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="UserSettings.settings">
-	    <Generator>SettingsSingleFileGenerator</Generator>
-	    <LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
-	  </None>
+	  	<None Update="UserSettings.settings">
+	    		<Generator>SettingsSingleFileGenerator</Generator>
+	    		<LastGenOutput>UserSettings.Designer.cs</LastGenOutput>
+	  	</None>
 	</ItemGroup>
-
 </Project>

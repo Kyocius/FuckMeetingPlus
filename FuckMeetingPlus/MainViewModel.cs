@@ -13,10 +13,10 @@ public class MainViewModel : ObservableObject
 {
     #region Properties
 
-    public string IsMissionStarted
+    public string MissionText
     {
-        get => isMissionStarted;
-        set => SetProperty(ref isMissionStarted, value);
+        get => _missionText;
+        set => SetProperty(ref _missionText, value);
     }
 
     //腾讯会议的安装路径
@@ -85,7 +85,7 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _y2, value);
     }
 
-    private string isMissionStarted;
+    private string _missionText;
 
     #endregion
 
@@ -112,7 +112,7 @@ public class MainViewModel : ObservableObject
     private void StartFishTouching()
     {
         myTimer.Start();
-        IsMissionStarted = "任务开始...";
+        MissionText = "任务开始...";
     }
 
     #endregion
@@ -127,7 +127,7 @@ public class MainViewModel : ObservableObject
         Y1 = UserSettings.Default.Y1;
         X2 = UserSettings.Default.X2;
         Y2 = UserSettings.Default.Y2;
-        IsMissionStarted = "准备就绪";
+        MissionText = "准备就绪";
 
         InitializeTimer();
 
@@ -170,6 +170,8 @@ public class MainViewModel : ObservableObject
             var intX2 = Convert.ToInt32(X2);
             var intY2 = Convert.ToInt32(Y2);
             NativeMethod.LeftMouseClick(intX2, intY2);
+
+            MissionText = "任务完成";
 
             myTimer.Enabled = false;
             myTimer.Stop();

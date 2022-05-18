@@ -80,7 +80,7 @@
                     </Grid.ColumnDefinitions>
 
                     <wpfui:Hyperlink Content="关于软件" Grid.Column="0" NavigateUri="https://github.com/Yoroion/FuckMeetingPlus"/>
-                    <TextBlock Text="{Binding IsMissionStarted}" Grid.Column="2" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding MissionText}" Grid.Column="2" VerticalAlignment="Center" />
                 </Grid>
             </StackPanel>
         </StackPanel>

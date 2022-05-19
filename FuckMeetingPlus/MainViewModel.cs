@@ -13,12 +13,6 @@ public class MainViewModel : ObservableObject
 {
     #region Properties
 
-    public string MissionText
-    {
-        get => _missionText;
-        set => SetProperty(ref _missionText, value);
-    }
-
     //腾讯会议的安装路径
     private string _path;
 
@@ -37,6 +31,7 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _waiting, value);
     }
 
+    //预定时间
     private string _time;
 
     public string Time
@@ -45,6 +40,7 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _time, value);
     }
 
+    //会议号码
     private string _meetingId;
 
     public string MeetingId
@@ -85,7 +81,17 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _y2, value);
     }
 
+    //右下角文字
     private string _missionText;
+
+    public string MissionText
+    {
+        get => _missionText;
+        set => SetProperty(ref _missionText, value);
+    }
+
+    private string CurrentTime;
+    private Timer myTimer;
 
     #endregion
 
@@ -134,9 +140,6 @@ public class MainViewModel : ObservableObject
         SaveSettingsCommand = new RelayCommand(SaveUserSettings);
         StartCommand = new RelayCommand(StartFishTouching);
     }
-
-    private string CurrentTime;
-    private Timer myTimer;
 
     /// <summary>
     /// 主逻辑函数，参数无用，仅用来匹配委托

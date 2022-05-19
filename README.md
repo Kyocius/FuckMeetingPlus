@@ -1,17 +1,13 @@
 # FuckMeeting+
 
-腾讯会议自动入会 **FuckMeeting+** 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeeting) 的重构升级版，遵循 Windows11 风格的 Fluent Design，是基于 .NET 6.0 的极简 WPF 应用，下文简称为 **FM+**
+FuckMeeting+ 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeeting) 的 GUI 重构版，是基于 .NET 6.0 的极简 WPF 应用
 
-## 📷 截图展示
-
-<img src="./screenshots/Light.png" alt="浅色模式" style="zoom:80%;" />
-
-<img src="./screenshots/Dark.png" alt="深色模式" style="zoom:80%;" />
+下文简称为 **FM+**
 
 ## ✨ 特性
 
 - 腾讯会议定时自动入会
-- 用户配置保存
+- 保存用户配置
 - Fluent Design / Mica 效果
 - 浅色 / 深色模式
 - 自带 .NET 桌面运行时 (可选)
@@ -19,9 +15,17 @@
 
 ## ⬇️ 下载 FM+
 
-FM+ 的发布模式为**独立版**与**依赖框架版**同时发布，如果你的 PC 安装了 .NET 运行时，推荐使用体积更小的依赖框架版
+FM+ 的发布模式为**独立版**与**依赖框架版**同时发布
+
+如果你的 PC 安装了 .NET 运行时，推荐使用体积更小的依赖框架版
 
 下载链接在 GitHub [Releases](https://github.com/Yoroion/FuckMeetingPlus/releases) 中
+
+## 📷 截图展示
+
+<img src="./screenshots/Light.png" alt="浅色模式"  />
+
+<img src="./screenshots/Dark.png" alt="深色模式"  />
 
 ## ⚒️ 使用教程
 
@@ -54,7 +58,7 @@ FM+ 的发布模式为**独立版**与**依赖框架版**同时发布，如果�
 
 你可能还需要了解一些 C# 和 XAML 的基础知识
 
-当然，如果你觉得作者写得太烂或者哪个地方需要改进，欢迎指出
+当然，如果你觉得作者写得太烂💩或者哪个地方需要改进，欢迎指出
 
 ## ⚖️ 协议
 

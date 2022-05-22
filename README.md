@@ -4,6 +4,8 @@ FuckMeeting+ 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeet
 
 下文简称为 **FM+**
 
+哔哩哔哩 [视频教程](https://www.bilibili.com/video/BV1ZB4y197pT/)
+
 ## ✨ 特性
 
 - 腾讯会议定时自动入会
@@ -30,11 +32,21 @@ FM+ 的发布模式为**独立版**与**依赖框架版**同时发布
 ## ⚒️ 使用教程
 
 1. 填写**合法的**腾讯会议安装路径，如 `E:\Tencent Room\WeMeet\wemeetapp.exe`
+
 2. 填写腾讯会议的启动时间，单位为**秒**。这个数值取决于你的电脑配置
+
 3. 使用 *Snipaste* 等软件获取需要点击的坐标，并在 FM+ 中填写。共计**两个**坐标，代表着将要点击的**加入会议**按钮
+
+   ![按钮1](./screenshots/按钮1.png)
+
+   ![按钮2](./screenshots/按钮2.png)
+
 4. 填写腾讯会议号码
+
 5. 填写**符合格式的**预定时间，月/日/时/分，如 `08/31/09/00`
+
 6. 单击**保存配置**
+
 7. 尽情享用，开始摸鱼！
 
 ## ⚠️ 注意事项

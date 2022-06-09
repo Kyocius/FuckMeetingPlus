@@ -13,8 +13,17 @@ public class MainViewModel : ObservableObject
 {
     #region Properties
 
-    //腾讯会议的安装路径
     private string _path;
+    private string _waiting;
+    private string _time;
+    private string _meetingId;
+    private string _x1;
+    private string _x2;
+    private string _y1;
+    private string _y2;
+    private string _missionText;
+    private string _currentTime;
+    private Timer _myTimer;
 
     public string Path
     {
@@ -22,17 +31,11 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _path, value);
     }
 
-    //等待腾讯会议启动时间，单位秒
-    private string _waiting;
-
     public string Waiting
     {
         get => _waiting;
         set => SetProperty(ref _waiting, value);
     }
-
-    //预定时间
-    private string _time;
 
     public string Time
     {
@@ -40,8 +43,6 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _time, value);
     }
 
-    //会议号码
-    private string _meetingId;
 
     public string MeetingId
     {
@@ -49,15 +50,11 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _meetingId, value);
     }
 
-    private string _x1;
-
     public string X1
     {
         get => _x1;
         set => SetProperty(ref _x1, value);
     }
-
-    private string _x2;
 
     public string X2
     {
@@ -65,15 +62,11 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _x2, value);
     }
 
-    private string _y1;
-
     public string Y1
     {
         get => _y1;
         set => SetProperty(ref _y1, value);
     }
-
-    private string _y2;
 
     public string Y2
     {
@@ -81,17 +74,11 @@ public class MainViewModel : ObservableObject
         set => SetProperty(ref _y2, value);
     }
 
-    //右下角文字
-    private string _missionText;
-
     public string MissionText
     {
         get => _missionText;
         set => SetProperty(ref _missionText, value);
     }
-
-    private string CurrentTime;
-    private Timer myTimer;
 
     #endregion
 
@@ -117,7 +104,7 @@ public class MainViewModel : ObservableObject
 
     private void StartFishTouching()
     {
-        myTimer.Start();
+        _myTimer.Start();
         MissionText = "任务开始...";
     }
 
@@ -146,9 +133,9 @@ public class MainViewModel : ObservableObject
     /// </summary>
     private void MainLogic(object sender, EventArgs e)
     {
-        CurrentTime = DateTime.Now.ToString("MM/dd/HH/mm");
+        _currentTime = DateTime.Now.ToString("MM/dd/HH/mm");
 
-        if (CurrentTime == Time)
+        if (_currentTime == Time)
         {
             try
             {
@@ -176,8 +163,8 @@ public class MainViewModel : ObservableObject
 
             MissionText = "任务完成";
 
-            myTimer.Enabled = false;
-            myTimer.Stop();
+            _myTimer.Enabled = false;
+            _myTimer.Stop();
         }
     }
 
@@ -186,9 +173,9 @@ public class MainViewModel : ObservableObject
     /// </summary>
     private void InitializeTimer()
     {
-        myTimer = new Timer();
-        myTimer.Interval = 30000; //注意间隔时间为30秒
-        myTimer.Enabled = false;
-        myTimer.Elapsed += MainLogic;
+        _myTimer = new Timer();
+        _myTimer.Interval = 30000; //注意间隔时间为30秒
+        _myTimer.Enabled = false;
+        _myTimer.Elapsed += MainLogic;
     }
 }

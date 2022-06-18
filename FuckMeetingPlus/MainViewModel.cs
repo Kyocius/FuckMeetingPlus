@@ -137,29 +137,31 @@ public class MainViewModel : ObservableObject
 
         if (_currentTime == Time)
         {
-            try
-            {
-                Process.Start(Path);
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-                throw;
-            }
+            // try
+            // {
+            //     Process.Start(Path);
+            // }
+            // catch (Exception exception)
+            // {
+            //     Console.WriteLine(exception);
+            //     throw;
+            // }
+            //
+            // Thread.Sleep(Convert.ToInt32(Waiting) * 1000);
+            //
+            // var intX1 = Convert.ToInt32(X1);
+            // var intY1 = Convert.ToInt32(Y1);
+            // NativeMethod.LeftMouseClick(intX1, intY1);
+            // Thread.Sleep(500);
+            //
+            // NativeMethod.KeyInput(MeetingId);
+            // Thread.Sleep(500);
+            //
+            // var intX2 = Convert.ToInt32(X2);
+            // var intY2 = Convert.ToInt32(Y2);
+            // NativeMethod.LeftMouseClick(intX2, intY2);
 
-            Thread.Sleep(Convert.ToInt32(Waiting) * 1000);
-
-            var intX1 = Convert.ToInt32(X1);
-            var intY1 = Convert.ToInt32(Y1);
-            NativeMethod.LeftMouseClick(intX1, intY1);
-            Thread.Sleep(500);
-
-            NativeMethod.KeyInput(MeetingId);
-            Thread.Sleep(500);
-
-            var intX2 = Convert.ToInt32(X2);
-            var intY2 = Convert.ToInt32(Y2);
-            NativeMethod.LeftMouseClick(intX2, intY2);
+            Cmd.RunCommand($"start wemeet://page/inmeeting?meeting_code={MeetingId}");
 
             MissionText = "任务完成";
 

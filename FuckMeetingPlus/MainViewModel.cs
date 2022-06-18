@@ -13,29 +13,11 @@ public class MainViewModel : ObservableObject
 {
     #region Properties
 
-    private string _path;
-    private string _waiting;
     private string _time;
     private string _meetingId;
-    private string _x1;
-    private string _x2;
-    private string _y1;
-    private string _y2;
     private string _missionText;
     private string _currentTime;
     private Timer _myTimer;
-
-    public string Path
-    {
-        get => _path;
-        set => SetProperty(ref _path, value);
-    }
-
-    public string Waiting
-    {
-        get => _waiting;
-        set => SetProperty(ref _waiting, value);
-    }
 
     public string Time
     {
@@ -48,30 +30,6 @@ public class MainViewModel : ObservableObject
     {
         get => _meetingId;
         set => SetProperty(ref _meetingId, value);
-    }
-
-    public string X1
-    {
-        get => _x1;
-        set => SetProperty(ref _x1, value);
-    }
-
-    public string X2
-    {
-        get => _x2;
-        set => SetProperty(ref _x2, value);
-    }
-
-    public string Y1
-    {
-        get => _y1;
-        set => SetProperty(ref _y1, value);
-    }
-
-    public string Y2
-    {
-        get => _y2;
-        set => SetProperty(ref _y2, value);
     }
 
     public string MissionText
@@ -88,14 +46,8 @@ public class MainViewModel : ObservableObject
 
     private void SaveUserSettings()
     {
-        UserSettings.Default.Path = Path;
         UserSettings.Default.MeetingId = MeetingId;
         UserSettings.Default.Time = Time;
-        UserSettings.Default.Waiting = Waiting;
-        UserSettings.Default.X1 = X1;
-        UserSettings.Default.Y1 = Y1;
-        UserSettings.Default.X2 = X2;
-        UserSettings.Default.Y2 = Y2;
 
         UserSettings.Default.Save();
     }
@@ -105,21 +57,15 @@ public class MainViewModel : ObservableObject
     private void StartFishTouching()
     {
         _myTimer.Start();
-        MissionText = "任务开始...";
+        MissionText = "开始任务";
     }
 
     #endregion
 
     public MainViewModel()
     {
-        Path = UserSettings.Default.Path;
         Time = UserSettings.Default.Time;
         MeetingId = UserSettings.Default.MeetingId;
-        Waiting = UserSettings.Default.Waiting;
-        X1 = UserSettings.Default.X1;
-        Y1 = UserSettings.Default.Y1;
-        X2 = UserSettings.Default.X2;
-        Y2 = UserSettings.Default.Y2;
         MissionText = "准备就绪";
 
         InitializeTimer();
@@ -160,6 +106,11 @@ public class MainViewModel : ObservableObject
             // var intX2 = Convert.ToInt32(X2);
             // var intY2 = Convert.ToInt32(Y2);
             // NativeMethod.LeftMouseClick(intX2, intY2);
+
+            if (MissionText == "任务完成")
+            {
+                MissionText = "开始任务";
+            }
 
             Cmd.RunCommand($"start wemeet://page/inmeeting?meeting_code={MeetingId}");
 

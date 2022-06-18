@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
         Style="{StaticResource UiWindow}"
-        Title="MainWindow" Height="630" Width="300"
+        Title="MainWindow" Height="100" Width="300"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
@@ -18,59 +18,28 @@
             <wpfui:TitleBar ForceShutdown="True" Title="FuckMeeting+" />
 
             <StackPanel Margin="16,0,16,0">
-                <StackPanel Margin="8">
-                    <TextBlock Text="腾讯会议路径" Margin="0,0,0,8" />
-                    <TextBox Text="{Binding Path, Mode=TwoWay}"></TextBox>
-                </StackPanel>
 
-                <StackPanel Margin="8">
-                    <TextBlock Text="等待腾讯会议启动时间" Margin="0,0,0,8" />
-                    <wpfui:NumberBox Text="{Binding Waiting, Mode=TwoWay}" />
-                </StackPanel>
-
-                <Grid Margin="8">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel>
-                        <TextBlock Text="横坐标1" Margin="0,0,0,8" />
-                        <wpfui:NumberBox Text="{Binding X1, Mode=TwoWay}" Margin="0,0,0,0" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="2">
-                        <TextBlock Text="纵坐标1" Margin="0,0,0,8" />
-                        <wpfui:NumberBox Text="{Binding Y1, Mode=TwoWay}" />
-                    </StackPanel>
-                </Grid>
-                <Grid Margin="8">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel>
-                        <TextBlock Text="横坐标2" Margin="0,0,0,8" />
-                        <wpfui:NumberBox Text="{Binding X2, Mode=TwoWay}" Margin="0,0,0,0" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="2">
-                        <TextBlock Text="纵坐标2" Margin="0,0,0,8" />
-                        <wpfui:NumberBox Text="{Binding Y2, Mode=TwoWay}" />
-                    </StackPanel>
-                </Grid>
-
-                <StackPanel Margin="8">
+                <StackPanel Margin="0,8,0,0">
                     <TextBlock Text="会议号" Margin="0,0,0,8" />
                     <wpfui:NumberBox Text="{Binding MeetingId, Mode=TwoWay}" />
                 </StackPanel>
-                <StackPanel Margin="8">
+
+                <StackPanel Margin="0,16,0,0">
                     <TextBlock Text="会议开始时间 (月/日/时/分)" Margin="0,0,0,8" />
                     <TextBox Text="{Binding Time, Mode=TwoWay}" />
                 </StackPanel>
 
-                <wpfui:Button Content="保存配置" Appearance="Secondary" Margin="0,8,0,8"
-                              Command="{Binding SaveSettingsCommand}" />
-                <wpfui:Button Content="开始摸鱼!" Appearance="Primary" Command="{Binding StartCommand}" />
+                <Grid Margin="0,16,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="8" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <wpfui:Button Grid.Column="0" Content="保存配置" Appearance="Secondary"
+                                  Command="{Binding SaveSettingsCommand}" />
+                    <wpfui:Button Grid.Column="2" Content="开始摸鱼" Appearance="Primary"
+                                  Command="{Binding StartCommand}" />
+                </Grid>
 
                 <Grid Margin="0,8,0,0">
                     <Grid.ColumnDefinitions>
@@ -79,7 +48,8 @@
                         <ColumnDefinition Width="60" />
                     </Grid.ColumnDefinitions>
 
-                    <wpfui:Hyperlink Content="关于软件" Grid.Column="0" NavigateUri="https://github.com/Yoroion/FuckMeetingPlus"/>
+                    <wpfui:Hyperlink Content="关于软件" Grid.Column="0"
+                                     NavigateUri="https://github.com/Yoroion/FuckMeetingPlus" />
                     <TextBlock Text="{Binding MissionText}" Grid.Column="2" VerticalAlignment="Center" />
                 </Grid>
             </StackPanel>

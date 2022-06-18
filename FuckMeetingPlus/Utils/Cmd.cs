@@ -4,7 +4,6 @@ namespace FuckMeetingPlus.Utils;
 
 public class Cmd
 {
-    private static string CmdPath = @"C:\Windows\System32\command.exe";
     /// <summary>
     /// 执行cmd命令 返回cmd窗口显示的信息
     /// 多命令请使用批处理命令连接符：
@@ -17,10 +16,10 @@ public class Cmd
     ///<param name="command">执行的命令</param>
     public static string RunCommand(string command)
     {
-        command = command.Trim().TrimEnd('&') + "&exit";//说明：不管命令是否成功均执行exit命令，否则当调用ReadToEnd()方法时，会处于假死状态
+        command = command.Trim().TrimEnd('&') + "&exit";//不管命令是否成功均执行exit命令，否则当调用ReadToEnd()方法时，会处于假死状态
         using (Process p = new Process())
         {
-            p.StartInfo.FileName = CmdPath;
+            p.StartInfo.FileName = "cmd.exe";
             p.StartInfo.UseShellExecute = false; //是否使用操作系统shell启动
             p.StartInfo.RedirectStandardInput = true; //接受来自调用程序的输入信息
             p.StartInfo.RedirectStandardOutput = true; //由调用程序获取输出信息

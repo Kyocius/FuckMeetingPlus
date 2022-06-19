@@ -112,9 +112,16 @@ public class MainViewModel : ObservableObject
                 MissionText = "开始任务";
             }
 
-            Cmd.RunCommand($"start wemeet://page/inmeeting?meeting_code={MeetingId}");
-
-            MissionText = "任务完成";
+            try
+            {
+                Cmd.RunCommand($"start wemeet://page/inmeeting?meeting_code={MeetingId}");
+                MissionText = "任务完成";
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
 
             _myTimer.Enabled = false;
             _myTimer.Stop();

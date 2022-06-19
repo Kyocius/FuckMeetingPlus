@@ -1,10 +1,8 @@
 # FuckMeeting+
 
-FuckMeeting+ 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeeting) 的 GUI 重构版，是基于 .NET 6.0 的极简 WPF 应用，用于自动加入腾讯会议
+FuckMeeting+ 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeeting) 的 GUI 重构版，是基于 .NET 6.0 的极简 WPF 应用，用于自动加入腾讯会议，下文简称为 **FM+**
 
-下文简称为 **FM+**
-
-哔哩哔哩 [视频教程](https://www.bilibili.com/video/BV1ZB4y197pT/) 
+简体中文 | [繁体中文](./README_TC.md)
 
 ## 特性
 
@@ -29,7 +27,7 @@ FM+ 的发布模式为**独立版**与**依赖框架版**同时发布
 
 ## 使用教程
 
-最新的 **2.2.0** 版本采用了 URL 协议启动腾讯会议，不再需要屏幕坐标！
+最新的 **2.2.0** 版本采用了 URL 协议启动腾讯会议，不再需要屏幕坐标
 
 1. 填写腾讯会议号码
 
@@ -38,8 +36,6 @@ FM+ 的发布模式为**独立版**与**依赖框架版**同时发布
 3. 保存配置
 
 4. 尽情享用，开始摸鱼！
-
-[^3]: Snipaste 是一款截图工具，你也可以选择 QQ 截图等软件获取坐标
 
 ## 注意事项
 
@@ -57,11 +53,9 @@ FM+ 的发布模式为**独立版**与**依赖框架版**同时发布
 
 ## 开发环境要求
 
-如果你想要自行修改 FM+ 或者为 FM+ 贡献代码，你需要安装 Visual Studio 2022[^2] 及 .NET SDK 6.0
+如果你想要自行修改 FM+ 或者为 FM+ 贡献代码，你需要安装 Visual Studio 2022 及 .NET SDK 6.0
 
-当然，如果你觉得作者写得太💩或者哪个地方需要改进，欢迎指出
-
-[^2]: 这里不是要求只使用 VS 2022 作为开发环境，也可以根据个人喜好选择 Rider 等等
+当然，如果你觉得写得太💩或者哪个地方需要改进，欢迎指出
 
 ## 协议
 

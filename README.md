@@ -2,7 +2,7 @@
 
 FuckMeeting+ 是 [FuckTencentMeeting](https://github.com/Yoroion/FuckTencentMeeting) 的 GUI 重构版，是基于 .NET 6.0 的极简 WPF 应用，用于自动加入腾讯会议，下文简称为 **FM+**
 
-简体中文 | [繁体中文](./README_TC.md)
+简体中文 | [繁体中文](https://github.com/Yoroion/FuckMeetingPlus/blob/master/README%20_TC.md)
 
 ## 特性
 
